@@ -13,6 +13,8 @@ evgeny_vlasov@yahoo.com
 14:00 - 15:30
 15:40 - 17:10
 
+vlasove/Django_Course1
+
 
 
 
