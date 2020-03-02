@@ -1,0 +1,3 @@
+import funcs 
+
+print("ALLES")
