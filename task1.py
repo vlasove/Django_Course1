@@ -33,6 +33,10 @@ print(b_bool + c_bool)
 
 a_str = "hello world"
 
+
+pi = 3.1415
+print("%.2f"%(pi))
+
 a_none = None 
 
 print(a_none.__sizeof__())

@@ -1,0 +1,15 @@
+a_set = set([1,2,3])
+b_set = set([3,4,5])
+
+print(a_set.intersection(b_set))
+print(a_set.union(b_set))
+print(a_set - b_set)
+print(a_set.symmetric_difference(b_set))
+
+print(dir(a_set))
+a1 = a_set.pop()
+print(a1)
+max(a_set)
+a_set.add("5")
+a_set.add(True)
+print(a_set)
