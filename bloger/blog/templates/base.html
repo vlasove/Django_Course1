@@ -8,10 +8,23 @@
     rel="stylesheet">
   </head>
   <body>
-    <header>
-      <h1><a href="{% url 'home' %}">Our Blog</a></h1>
-    </header>
     <div>
+      <header>
+        <div class="nav-left">
+          <h1><a href="{% url 'home' %}">Our Blog</a></h1>
+        </div>
+        <div class="nav-right">
+          <a href="{% url 'post_new'%}">+New Post</a>
+        </div>
+      </header>
+      {% if user.is_authenticated %}
+        <p>Hi, {{user.username}}</p>
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
+      {% else %}
+        <p>Hello anonimus!</p>
+        <p><a href="{% url 'login' %}">Log In</a></p>
+      {% endif %}
+
       {% block content %}
       {% endblock content %}
     </div>

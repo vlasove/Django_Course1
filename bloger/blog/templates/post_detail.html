@@ -7,4 +7,9 @@
     <p>{{post.body}}</p>
     <p>By : {{post.author}}</p>
   </div>
+  <p>
+    <a href="{% url 'post_update' post.pk %}">* Update Post</a> 
+    |  
+    <a href="{% url 'post_delete' post.pk %}">* Delete Post</a>
+  </p>
 {% endblock content %}

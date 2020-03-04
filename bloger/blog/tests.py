@@ -37,3 +37,20 @@ class BlogTest(TestCase):
       self.assertEqual(response.status_code,200)
       self.assertTemplateUsed(response, 'home.html')
       self.assertContains(response, 'My test post') 
+  
+  def test_post_delete(self):
+    response = self.client.get(
+      reverse('post_delete', args='1')
+    )
+    self.assertEqual(response.status_code, 200)
+    self.assertTemplateUsed(response, 'post_delete.html')
+
+  def test_post_update(self):
+    response = self.client.post(
+      reverse('post_update', args='1'),
+      {
+        'title' : 'Updated title',
+        'body' : 'Updated body',
+      }
+    )
+    self.assertEqual(response.status_code, 302)
