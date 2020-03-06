@@ -13,10 +13,19 @@
       </div>
       <div class="card-body">
         {{post.body}}
+        <a href="{% url 'post_edit' post.pk %}">Edit</a> 
+        | 
+        <a href="{% url 'post_delete' post.pk %}">Delete</a>
       </div>
       <div class="card-footer text-center text-muted">
-        <a href="#">Edit</a> | <a href="#">Delete</a>
+          {% for comment in post.comments.all %}
+            <p>
+              <span class="font-weight-bold">{{comment.author}} &middot;</span>
+              {{comment}}
+            </p>
+          {% endfor %}
       </div>
     </div>
   {% endfor %}
 {% endblock content %}
+

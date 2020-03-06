@@ -1,25 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  {% if user.is_authenticated %}
-    Hi, {{user.username}}
-    <p>
-      <a href="{% url 'logout' %}">
-        <button class="btn btn-success" type="submit">Log Out</button>
-      </a>
-      |
-      
+  <div class="jumbotron">
+    <h1 class = "display-4">BOOK Inc App</h1>
+    <p class="lead">A BOOK INC app built with Django</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="{% url 'posts_list'%}"
+        role="button">View All Posts</a>
     </p>
-  {% else %}
-    <p>You are not logged in.</p>
-    <p>
-      <a href="{% url 'signup' %}">
-        <button class="btn btn-success" type="submit">Sign Up</button>
-      </a>
-      |
-      <a href="{% url 'login' %}">
-        <button class="btn btn-submit" type="submit">Log In</button>
-      </a>
-    </p>
-  {% endif %}
+  </div>
 {% endblock content%}
