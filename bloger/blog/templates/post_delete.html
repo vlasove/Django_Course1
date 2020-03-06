@@ -1,0 +1,10 @@
+<!--templates/post_delete.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Delete Post</h1>
+  <form action="" method="post"> {% csrf_token %}
+      <p>Are u sure to delete "{{ post.title }}" ???</p>
+      <input type="submit" value="Confirmation" />
+  </form>
+{% endblock content %}
