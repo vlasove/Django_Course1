@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1 class = "display-4">BOOK Inc App</h1>
+    <p class="lead">A BOOK INC app built with Django</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="{% url 'posts_list'%}"
+        role="button">View All Posts</a>
+    </p>
+  </div>
+{% endblock content%}
