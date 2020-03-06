@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    Hi, {{user.username}}
+    <p>
+      <a href="{% url 'logout' %}">
+        <button class="btn btn-success" type="submit">Log Out</button>
+      </a>
+      |
+      
+    </p>
+  {% else %}
+    <p>You are not logged in.</p>
+    <p>
+      <a href="{% url 'signup' %}">
+        <button class="btn btn-success" type="submit">Sign Up</button>
+      </a>
+      |
+      <a href="{% url 'login' %}">
+        <button class="btn btn-submit" type="submit">Log In</button>
+      </a>
+    </p>
+  {% endif %}
+{% endblock content%}
